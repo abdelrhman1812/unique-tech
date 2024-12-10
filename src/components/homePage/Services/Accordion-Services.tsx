@@ -48,11 +48,10 @@ const AccordionServices = () => {
               }}
               viewport={{ once: true }}
             >
-              <AccordionTrigger className="text-white w-full py-[30px] text-[32px] font-medium leading-[60px]">
+              <AccordionTrigger className="text-white     w-full py-[30px] text-[32px] font-medium leading-[60px]">
                 {item.title}
               </AccordionTrigger>
             </motion.div>
-            <hr className="w-full h-[1px] bg-white opacity-95" />
 
             {/* Animated Accordion Content with useInView */}
             <motion.div
@@ -65,7 +64,7 @@ const AccordionServices = () => {
               }}
               viewport={{ once: true }}
             >
-              <AccordionContent className="text-white w-full text-xl opacity-70 leading-[48px]">
+              <AccordionContent className="text-white w-full border-t text-xl opacity-70 leading-[48px]">
                 {item.description}
               </AccordionContent>
             </motion.div>
