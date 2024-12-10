@@ -10,14 +10,20 @@ export default {
   theme: {
     extend: {
       container: {
-        center: { true: "center" },
+        center: true,
         padding: {
           DEFAULT: "1rem",
           sm: "2rem",
           lg: "4rem",
           xl: "5rem",
-          "2xl": "6rem",
+          "2xl": "120px",
         },
+        screens: {
+          "2xl": "1440px",
+        },
+      },
+      boxShadow: {
+        custom: "0px 4px 4px rgba(0, 0, 0, 0.25)",
       },
       colors: {
         background: "hsl(var(--background))",
@@ -70,6 +76,28 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: {
+            height: "0",
+          },
+          to: {
+            height: "var(--radix-accordion-content-height)",
+          },
+        },
+        "accordion-up": {
+          from: {
+            height: "var(--radix-accordion-content-height)",
+          },
+          to: {
+            height: "0",
+          },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },

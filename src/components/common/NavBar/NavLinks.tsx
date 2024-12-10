@@ -29,9 +29,9 @@ const NavLinks = () => {
   const isActive = (href: string) => pathname === href;
 
   return (
-    <div className="flex items-center justify-between ">
+    <div className="flex items-center justify-end ">
       <MobileNav />
-      <div className=" hidden lg:flex  w-[795px] h-[49px]  items-center space-x-[50px] ">
+      <div className=" hidden lg:flex h-[49px]  items-center space-x-[50px] justify-end ">
         <ul className="navbar-nav flex space-x-[50px]  ">
           {navLinks.map((link, index) => (
             <li key={index} className="nav-item">
