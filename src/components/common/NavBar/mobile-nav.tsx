@@ -56,7 +56,7 @@ export function MobileNav() {
               ))}
               <button
                 type="button"
-                className="bg-bgBtn w-[183px] h-[49px] font-bold mx-auto text-white capitalize rounded mt-5"
+                className="bg-bgBtn w-[183px] h-[49px] font-bold mx-auto text-white capitalize rounded mt-5 hover:opacity-80 transition-all duration-300 ease-in-out"
               >
                 Get In Touch
               </button>

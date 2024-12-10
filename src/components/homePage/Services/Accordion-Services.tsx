@@ -1,9 +1,12 @@
+"use client";
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { motion } from "framer-motion";
 
 const AccordionServices = () => {
   const data = [
@@ -34,13 +37,38 @@ const AccordionServices = () => {
       <Accordion type="single" collapsible defaultValue="item-1">
         {data.map((item, index) => (
           <AccordionItem value={`item-${index + 1}`} key={index}>
-            <AccordionTrigger className="text-white w-full py-[30px] text-[32px] font-medium leading-[60px]">
-              {item.title}
-            </AccordionTrigger>
+            {/* Animated Accordion Trigger with useInView */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                ease: "easeOut",
+                delay: index * 0.2,
+              }}
+              viewport={{ once: true }}
+            >
+              <AccordionTrigger className="text-white w-full py-[30px] text-[32px] font-medium leading-[60px]">
+                {item.title}
+              </AccordionTrigger>
+            </motion.div>
             <hr className="w-full h-[1px] bg-white opacity-95" />
-            <AccordionContent className="text-white w-full text-xl opacity-70 leading-[48px] ">
-              {item.description}
-            </AccordionContent>
+
+            {/* Animated Accordion Content with useInView */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                ease: "easeOut",
+                delay: index * 0.2 + 0.4, // Content appears slightly after the title
+              }}
+              viewport={{ once: true }}
+            >
+              <AccordionContent className="text-white w-full text-xl opacity-70 leading-[48px]">
+                {item.description}
+              </AccordionContent>
+            </motion.div>
           </AccordionItem>
         ))}
       </Accordion>
