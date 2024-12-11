@@ -6,7 +6,7 @@ const Logo = () => {
           U
           <span className="absolute bottom-0 left-0 right-0 bg-black w-[60%] mx-auto h-[3px]"></span>
         </span>
-        <span className="w-[197px] h-[35px] text-[28px] font-semibold uppercase">
+        <span className="w-[197px] sm:h-[35px] text-[20px] sm:text-[28px] font-semibold uppercase">
           Unique Tech
         </span>
       </h4>
@@ -15,4 +15,3 @@ const Logo = () => {
 };
 
 export default Logo;
-

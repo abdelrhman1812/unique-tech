@@ -3,7 +3,7 @@ import NavLinks from "./NavLinks";
 
 const NavBar = () => {
   return (
-    <nav className=" shadow-custom py-10 ">
+    <nav className=" shadow-custom py-6 sm:py-10 ">
       <div className="container  flex justify-between items-center ">
         <Logo />
         <NavLinks />
