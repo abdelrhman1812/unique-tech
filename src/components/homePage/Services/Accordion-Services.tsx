@@ -48,7 +48,7 @@ const AccordionServices = () => {
               }}
               viewport={{ once: true }}
             >
-              <AccordionTrigger className="text-white     w-full py-[30px] text-[32px] font-medium leading-[60px]">
+              <AccordionTrigger className="text-white w-full py-[30px] text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] font-medium leading-[40px] sm:leading-[50px] md:leading-[60px]">
                 {item.title}
               </AccordionTrigger>
             </motion.div>
@@ -64,7 +64,7 @@ const AccordionServices = () => {
               }}
               viewport={{ once: true }}
             >
-              <AccordionContent className="text-white w-full border-t text-xl opacity-70 leading-[48px]">
+              <AccordionContent className="text-white w-full border-t text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] opacity-70 leading-[30px] sm:leading-[36px] md:leading-[40px]">
                 {item.description}
               </AccordionContent>
             </motion.div>

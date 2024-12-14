@@ -68,7 +68,7 @@ const DotsNavigation: React.FC<DotsNavigationProps> = ({
     {slides.map((_, index) => (
       <motion.span
         key={index}
-        className={`w-[15px] h-[15px] rounded-full cursor-pointer bg-gray-300 transition-all duration-300 
+        className={`w-[12px] h-[12px] rounded-full cursor-pointer bg-gray-300 transition-all duration-300 
           ${index === currentIndex ? "bg-gray-700 scale-125" : ""}`}
         onClick={() => onDotClick(index)}
         whileTap={{ scale: 1.4 }}
