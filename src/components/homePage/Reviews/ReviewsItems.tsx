@@ -44,7 +44,7 @@ const ReviewsItems: React.FC = () => {
 
   return (
     <motion.div
-      className="relative flex flex-col lg:flex-row justify-between items-center gap-y-4 lg:gap-y-0 px-8 lg:px-[100px] w-full max-w-[1440px] mx-auto py-16"
+      className="relative flex flex-col lg:flex-row justify-between items-center gap-y-4 lg:gap-y-0 px-3 sm:px-8 lg:px-[100px] w-full max-w-[1440px] mx-auto py-16"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
@@ -53,7 +53,7 @@ const ReviewsItems: React.FC = () => {
       {reviews.map((review, index) => (
         <motion.div
           key={review.id}
-          className={`space-y-6 w-full lg:w-[540px] p-4 rounded-lg ${
+          className={`space-y-6 w-full lg:w-[540px] p-0 sm:p-4 rounded-lg ${
             index === 0 ? "lg:mr-[50px]" : "lg:ml-[50px]"
           }`}
           initial={{ opacity: 0, y: 50 }}
@@ -62,7 +62,7 @@ const ReviewsItems: React.FC = () => {
           viewport={{ once: true }}
         >
           <div className="space-y-4 min-h-[220px]">
-            <h3 className="text-[28px] font-medium font-Poppins leading-10 text-white">
+            <h3 className="text-[24px] sm:text-[28px] font-medium font-Poppins leading-10 text-white">
               {review.title}
             </h3>
             <p className="text-[#e6e6e6] leading-7 text-lg font-light font-Poppins">
