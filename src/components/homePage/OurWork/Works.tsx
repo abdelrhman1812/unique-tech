@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import workImageEgypt from "../../../../public/assets/egypt-12.png";
 import workImage from "../../../../public/assets/image 1.png";
 
@@ -64,12 +64,11 @@ const DotsNavigation: React.FC<DotsNavigationProps> = ({
   currentIndex,
   onDotClick,
 }) => (
-  <div className="flex items-center justify-around mt-4 rounded-full bg-gray-200 w-[109px] h-[39px]">
+  <div className="mt-4 flex h-[39px] w-[109px] items-center justify-around rounded-full bg-gray-200">
     {slides.map((_, index) => (
       <motion.span
         key={index}
-        className={`w-[12px] h-[12px] rounded-full cursor-pointer bg-gray-300 transition-all duration-300 
-          ${index === currentIndex ? "bg-gray-700 scale-125" : ""}`}
+        className={`h-[12px] w-[12px] cursor-pointer rounded-full bg-gray-300 transition-all duration-300 ${index === currentIndex ? "scale-125 bg-gray-700" : ""}`}
         onClick={() => onDotClick(index)}
         whileTap={{ scale: 1.4 }}
       ></motion.span>
@@ -80,16 +79,26 @@ const DotsNavigation: React.FC<DotsNavigationProps> = ({
 const Slider: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Set the interval to automatically switch slides every 3 seconds
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % slidesData.length);
+    }, 3000); // Change slide every 3 seconds
+
+    // Clean up the interval on component unmount
+    return () => clearInterval(intervalId);
+  }, []);
+
   const visibleSlides = [
     slidesData[currentIndex],
     slidesData[(currentIndex + 1) % slidesData.length],
   ];
 
   return (
-    <div className="relative w-full max-w-[1200px] mt-11">
+    <div className="relative mt-11 w-full max-w-[1200px]">
       {/* Desktop View */}
       <motion.div
-        className="md:flex justify-center hidden items-center gap-6 mb-5"
+        className="mb-5 hidden items-center justify-center gap-6 md:flex"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -100,7 +109,7 @@ const Slider: React.FC = () => {
       </motion.div>
 
       {/* Mobile View */}
-      <div className="flex justify-center md:hidden items-center gap-6 mb-5">
+      <div className="mb-5 flex items-center justify-center gap-6 md:hidden">
         <Slide slide={visibleSlides[0]} />
       </div>
 

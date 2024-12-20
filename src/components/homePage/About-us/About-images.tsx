@@ -10,7 +10,7 @@ import topRightImg from "../../../../public/assets/about/topRight.png";
 const AboutImages = () => {
   return (
     <motion.div
-      className="flex gap-4 items-center w-full md:w-[500px] overflow-hidden"
+      className="flex w-full items-center gap-4 overflow-hidden"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
@@ -37,7 +37,7 @@ const AboutImages = () => {
 
       {/* Right Column */}
       <motion.div
-        className="flex flex-col gap-4 w-full"
+        className="flex w-full flex-col gap-4"
         initial={{ opacity: 0, x: 50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 0.3 }}

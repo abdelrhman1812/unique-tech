@@ -7,7 +7,7 @@ import Arrow from "../../../../public/assets/about/Vector.png";
 const AboutText = () => {
   return (
     <motion.div
-      className="grid place-content-center px-4"
+      className="grid place-content-center p-0 md:px-4"
       initial={{ opacity: 0, y: 50 }}
       transition={{ duration: 1 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -20,7 +20,7 @@ const AboutText = () => {
         viewport={{ once: true }}
       >
         <Image
-          className="ml-auto"
+          className="ml-auto hidden md:block"
           src={Arrow}
           alt="Arrow Decoration"
           width={271}
@@ -30,7 +30,7 @@ const AboutText = () => {
       </motion.div>
 
       <motion.h2
-        className="font-Poppins font-semibold text-[28px] sm:text-[36px] md:text-[48px] lg:text-[58px] leading-tight mb-6"
+        className="mb-6 font-Poppins text-[28px] font-semibold leading-tight sm:text-[36px] md:text-[48px] lg:text-[58px]"
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.4 }}
@@ -40,7 +40,7 @@ const AboutText = () => {
       </motion.h2>
 
       <motion.p
-        className="font-medium text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed max-w-[500px] mx-auto"
+        className="text-[14px] font-medium leading-relaxed sm:text-[16px] md:text-[18px] lg:text-[20px]"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.6 }}

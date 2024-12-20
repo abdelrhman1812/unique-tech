@@ -31,19 +31,16 @@ const NavLinks = () => {
   return (
     <div className="flex items-center justify-end">
       <MobileNav />
-      <div className="hidden lg:flex h-[49px] items-center space-x-[50px] justify-end">
+      <div className="hidden h-[49px] items-center justify-end space-x-[50px] lg:flex">
         <ul className="navbar-nav flex space-x-[50px]">
           {navLinks.map((link, index) => (
-            <li key={index} className="nav-item relative group">
+            <li key={index} className="nav-item group relative">
               <Link legacyBehavior href={link.path}>
                 <a
-                  className={`nav-link w-[53px] h-[22px] text-[18px] relative 
-                    ${isActive(link.path) ? "text-black" : "text-grayMuted"}
-                    transition-all duration-300 ease-in-out
-                  `}
+                  className={`nav-link relative h-[22px] w-[53px] text-[18px] ${isActive(link.path) ? "text-black" : "text-grayMuted"} transition-all duration-300 ease-in-out`}
                 >
                   {link.name}
-                  <span className="absolute left-0 -bottom-3 w-0 h-[2px] bg-black transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                  <span className="absolute -bottom-3 left-0 h-[2px] w-0 bg-black transition-all duration-300 ease-in-out group-hover:w-full"></span>
                 </a>
               </Link>
             </li>
@@ -51,7 +48,7 @@ const NavLinks = () => {
         </ul>
         <button
           type="button"
-          className="bg-bgBtn w-[183px] h-[49px] font-bold text-white capitalize rounded hover:opacity-80 transition-all duration-300 ease-in-out"
+          className="h-[49px] w-[183px] rounded bg-bgBtn font-bold capitalize text-white transition-all duration-300 ease-in-out hover:opacity-80"
         >
           Get In Touch
         </button>

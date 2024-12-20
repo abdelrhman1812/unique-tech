@@ -12,7 +12,7 @@ const ServicesHead = () => {
       viewport={{ once: true }}
     >
       <motion.h2
-        className="text-white w-[200px] h-[27px] py-[30px]"
+        className="h-[27px] w-[200px] py-[30px] text-[18px] text-white md:text-[24px]"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.8 }}

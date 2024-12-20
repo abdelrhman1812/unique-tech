@@ -83,7 +83,7 @@ const ContactForm: React.FC = () => {
                 onBlur={formik.handleBlur}
               />
               <svg
-                className="absolute right-3 top-1/2 -translate-y-1/2 transform transition-all duration-300 group-hover:scale-110"
+                className="absolute right-[30px] top-1/2 -translate-y-1/2 transform transition-all duration-300 group-hover:scale-110"
                 width="21"
                 height="20"
                 viewBox="0 0 21 20"
@@ -111,7 +111,7 @@ const ContactForm: React.FC = () => {
                 onBlur={formik.handleBlur}
               />
               <svg
-                className="absolute right-3 top-1/2 -translate-y-1/2 transform transition-all duration-300 group-hover:scale-110"
+                className="absolute right-[30px] top-1/2 -translate-y-1/2 transform transition-all duration-300 group-hover:scale-110"
                 width="21"
                 height="20"
                 viewBox="0 0 21 20"
@@ -148,7 +148,7 @@ const ContactForm: React.FC = () => {
                 onBlur={formik.handleBlur}
               />
               <svg
-                className="absolute right-3 top-1/2 -translate-y-1/2 transform transition-all duration-300 group-hover:scale-110"
+                className="absolute right-[30px] top-1/2 -translate-y-1/2 transform transition-all duration-300 group-hover:scale-110"
                 width="20"
                 height="20"
                 viewBox="0 0 21 16"
@@ -176,7 +176,7 @@ const ContactForm: React.FC = () => {
                 onBlur={formik.handleBlur}
               />
               <svg
-                className="absolute right-3 top-1/2 -translate-y-1/2 transform transition-all duration-300 group-hover:scale-110"
+                className="absolute right-[30px] top-1/2 -translate-y-1/2 transform transition-all duration-300 group-hover:scale-110"
                 width="20"
                 height="20"
                 viewBox="0 0 19 18"
@@ -210,7 +210,7 @@ const ContactForm: React.FC = () => {
             onBlur={formik.handleBlur}
           />
           <svg
-            className="absolute right-3 top-6 -translate-y-1/2 transform transition-all duration-300 group-hover:scale-110"
+            className="absolute right-[30px] top-6 -translate-y-1/2 transform transition-all duration-300 group-hover:scale-110"
             width="20"
             height="20"
             viewBox="0 0 21 20"
