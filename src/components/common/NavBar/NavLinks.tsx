@@ -50,12 +50,12 @@ const NavLinks = () => {
             </li>
           ))}
         </ul>
-        <button
-          type="button"
-          className="h-[49px] w-[183px] rounded bg-bgBtn font-bold capitalize text-white transition-all duration-300 ease-in-out hover:opacity-80"
+        <Link
+          href={"/contact"}
+          className="flex h-[49px] w-[183px] items-center justify-center rounded bg-bgBtn font-bold capitalize text-white transition-all duration-300 ease-in-out hover:opacity-80"
         >
           Get In Touch
-        </button>
+        </Link>
       </div>
     </div>
   );

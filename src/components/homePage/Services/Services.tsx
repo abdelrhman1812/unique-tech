@@ -3,8 +3,11 @@ import ServicesHead from "./Services-head";
 
 const Services = () => {
   return (
-    <section className="services bg-black py-28 md:py-[100px]  md:h-[761px]">
-      <div className="container flex-col flex md:flex-row gap-x-[29px]">
+    <section
+      id="services"
+      className="services bg-black py-28 md:h-[761px] md:py-[100px]"
+    >
+      <div className="container flex flex-col gap-x-[29px] md:flex-row">
         <ServicesHead />
         <AccordionServices />
       </div>

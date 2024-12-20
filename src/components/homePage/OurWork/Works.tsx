@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import { useEffect, useState } from "react";
-import workImageEgypt from "../../../../public/assets/egypt-12.png";
+import WZKKER from "../../../../public/assets/Projects/WZKKER.png";
 import workImage from "../../../../public/assets/image 1.png";
 
 interface SlideData {
@@ -16,17 +16,17 @@ const slidesData: SlideData[] = [
   {
     id: 1,
     image: workImage,
-    title: "WEBSITE - Increasing your productivity",
+    title: "WEBSITE - Bit Encryption",
   },
   {
     id: 2,
-    image: workImageEgypt,
+    image: WZKKER,
     title: "WEBSITE - Boosting your efficiency",
   },
   {
     id: 3,
     image: workImage,
-    title: "WEBSITE - Creativity unleashed",
+    title: "WEBSITE - Bit Encryption",
   },
 ];
 

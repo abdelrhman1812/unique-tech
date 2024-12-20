@@ -13,14 +13,14 @@ const FooterLinks = () => {
   const links: Links[] = [
     { id: 1, title: "HOME", path: "/" },
     { id: 2, title: "ABOUT", path: "/about" },
-    { id: 3, title: "SERVICES", path: "/services" },
+    { id: 3, title: "SERVICES", path: "#services" },
     { id: 4, title: "PROJECTS", path: "/projects" },
-    { id: 5, title: "CONTACTS", path: "/contacts" },
+    { id: 5, title: "CONTACTS", path: "/contact" },
   ];
 
   return (
     <motion.ul
-      className="flex flex-wrap justify-center gap-4 md:gap-6 my-8 px-4"
+      className="my-8 flex flex-wrap justify-center gap-4 px-4 md:gap-6"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
@@ -38,7 +38,7 @@ const FooterLinks = () => {
           }}
         >
           <Link
-            className="text-white text-[14px] md:text-[16px] font-medium hover:text-gray-400 transition duration-300"
+            className="text-[14px] font-medium text-white transition duration-300 hover:text-gray-400 md:text-[16px]"
             href={link.path}
           >
             {link.title}

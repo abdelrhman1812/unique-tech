@@ -46,9 +46,9 @@ const AboutText = () => {
         transition={{ duration: 1, delay: 0.6 }}
         viewport={{ once: true }}
       >
-        Concept Softworks is a software company. We develop custom-built
-        software for clients, covering everything from financial institutions
-        and medical companies to tech companies and government organizations.
+        Unique tech is a software company, we develop custom built software for
+        clients - covering everything from financial institutions & medical
+        companies all the way to tech companies and government organizations.
       </motion.p>
     </motion.div>
   );

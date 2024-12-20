@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image, { StaticImageData } from "next/image";
+import { StaticImageData } from "next/image";
 import imgProfile from "../../../../public/assets/Profile.png";
 
 interface Review {
@@ -19,24 +19,23 @@ const ReviewsItems: React.FC = () => {
   const reviews: Review[] = [
     {
       id: 1,
-      title:
-        "SquareUp has been Instrumental in Transforming our Online Presence.",
+      title: "I would like to express my sincere thanks and appreciation.",
       description:
-        "Their team's expertise in web development and design resulted in a visually stunning and user-friendly e-commerce platform. Our online sales have skyrocketed, and we couldn't be happier.",
+        "I would like to express my sincere thanks and appreciation for the outstanding work we have done together. My experience working with you has been truly exceptional, and I am very pleased with the collaboration. Your commitment to quality and punctuality throughout the project made the entire process smooth and successful.",
       user: {
-        name: "John Smith",
-        title: "CEO of Chic Boutique",
+        name: "ENG AHMED MAHMOUD",
+        title: "CEO of WzkKir app.",
         image: imgProfile,
       },
     },
     {
       id: 2,
-      title: "Working with Unuiqu was a breeze.",
+      title: "I wanted to take a moment to thank you for..",
       description:
-        "They understood our vision for a mobile app that streamlined our food delivery service. The app they delivered exceeded our expectations, and our customers love the seamless ordering experience. SquareUp is a trusted partner we highly recommend.",
+        "I wanted to take a moment to thank you for the exceptional experience I had working with your team. It has truly been a pleasure collaborating with you. Your professionalism and dedication to meeting deadlines were impressive and made the entire process smooth and enjoyable.",
       user: {
-        name: "Sarah Johnson",
-        title: "Founder of HungryBites",
+        name: "ENG MAHMOUD  ALI",
+        title: "Founder of Elbasuony office.",
         image: imgProfile,
       },
     },
@@ -74,7 +73,7 @@ const ReviewsItems: React.FC = () => {
           <div className="flex flex-col gap-y-3 rounded-[8px] bg-[#5A5858] p-5 sm:flex-row sm:items-center sm:gap-y-0">
             <div className="flex flex-grow items-center gap-4">
               {/* Image */}
-              <figure>
+              {/* <figure>
                 <Image
                   src={review.user.image}
                   alt={`${review.user.name}'s profile`}
@@ -82,7 +81,7 @@ const ReviewsItems: React.FC = () => {
                   height={60}
                   className="rounded[8px] object-cover"
                 />
-              </figure>
+              </figure> */}
               {/* Text */}
               <div>
                 <h2 className="font-Poppins text-[20px] font-medium text-white">

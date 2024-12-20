@@ -1,12 +1,11 @@
 "use client";
-import { StaticImageData } from "next/image";
-
 import { mock_projects } from "@/components/data/mock-projects";
 import Collaborate from "@/components/homePage/Collaborate/Collaborate";
 import OurWork from "@/components/homePage/OurWork/OurWork";
 import { Projects } from "@/lib/types";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useState } from "react";
 
@@ -68,7 +67,7 @@ const Slider = ({ slides }: SliderProps) => {
 
   return (
     <div className="my-12">
-      <Slide image={slides[currentIndex].image} />
+      <Slide key={currentIndex} image={slides[currentIndex].image} />
 
       <DotsNavigation
         slides={slides}
@@ -84,7 +83,6 @@ const Page = () => {
   const project = mock_projects.find(
     (project: Projects) => project.id === Number(id),
   );
-  console.log(project, id);
 
   if (!project) {
     return (
@@ -97,7 +95,7 @@ const Page = () => {
   return (
     <main className="pt-[40px]">
       <div className="container mb-12">
-        <div className="flex flex-col px-4 md:flex-row md:space-x-6">
+        <motion.div className="flex flex-col px-4 md:flex-row md:space-x-6">
           <div className="w-[94px] py-[40px]">
             <motion.span
               className="block h-2 w-[94px] rounded bg-black"
@@ -120,16 +118,18 @@ const Page = () => {
             <p className="text-xl leading-[36px] text-[#1F1F39B2]">
               {project.description}
             </p>
-            <motion.button
-              className="hover:bg-bgBtnHover mt-5 h-[66px] w-[246px] rounded-[11px] bg-bgBtn p-[10px] font-bold text-white transition sm:mx-0"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-            >
-              LET’S TALK
-            </motion.button>
+            <Link href={"/contact"} passHref>
+              <motion.a
+                className="hover:bg-bgBtnHover mt-5 flex h-[66px] w-[246px] items-center justify-center rounded-[11px] bg-bgBtn p-[10px] font-bold text-white transition sm:mx-0"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+              >
+                LET’S TALK
+              </motion.a>
+            </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
       <Collaborate />
       <OurWork />
