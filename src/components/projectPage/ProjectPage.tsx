@@ -5,7 +5,7 @@ import ProjectPageTitle from "./ProjectPageTitle";
 
 const ProjectPage = () => {
   return (
-    <main className="py-[40px]">
+    <main className="pt-[40px]">
       <div className="container">
         <ProjectPageTitle />
         <ProjectList />

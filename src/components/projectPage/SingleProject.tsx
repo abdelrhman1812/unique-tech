@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 
 type ProjectType = {
   project: {
@@ -40,12 +41,14 @@ const SingleProject = ({ project }: ProjectType) => {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.4, delay: 0.2, ease: "easeInOut" }}
       >
-        <h2 className="text-xl font-bold md:text-xl">
-          {project.title.split(" ").slice(0, 2).join(" ")}
-          <span className="font-normal text-black opacity-70">
-            {" " + project.title.split(" ").slice(2).join(" ")}
-          </span>
-        </h2>
+        <Link href={`/projects/${project.id}`}>
+          <h2 className="text-xl font-bold md:text-xl">
+            {project.title.split(" ").slice(0, 2).join(" ")}
+            <span className="font-normal text-black opacity-70">
+              {" " + project.title.split(" ").slice(2).join(" ")}
+            </span>
+          </h2>
+        </Link>
       </motion.div>
     </motion.div>
   );

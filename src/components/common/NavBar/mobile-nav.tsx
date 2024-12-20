@@ -32,7 +32,7 @@ export function MobileNav() {
           <SheetTrigger asChild>
             <button
               aria-label="Open mobile menu"
-              className="h-[45px] w-[45px] lg:hidden cursor-pointer"
+              className="h-[45px] w-[45px] cursor-pointer lg:hidden"
             >
               <Menu />
             </button>
@@ -43,12 +43,12 @@ export function MobileNav() {
                 <span>{""}</span>
               </SheetTitle>
             </SheetHeader>
-            <nav className="flex flex-col py-6 gap-3">
-              {navLinks.map((link) => (
+            <nav className="flex flex-col gap-3 py-6">
+              {navLinks.map((link, index) => (
                 <Link
-                  key={link.path}
+                  key={index}
                   href={link.path}
-                  className="block text-lg border-b ps-3 border-gray-200 py-3"
+                  className="block border-b border-gray-200 py-3 ps-3 text-lg"
                   aria-label={link.name}
                 >
                   {link.name}
@@ -56,7 +56,7 @@ export function MobileNav() {
               ))}
               <button
                 type="button"
-                className="bg-bgBtn w-[183px] h-[49px] font-bold mx-auto text-white capitalize rounded mt-5 hover:opacity-80 transition-all duration-300 ease-in-out"
+                className="mx-auto mt-5 h-[49px] w-[183px] rounded bg-bgBtn font-bold capitalize text-white transition-all duration-300 ease-in-out hover:opacity-80"
               >
                 Get In Touch
               </button>

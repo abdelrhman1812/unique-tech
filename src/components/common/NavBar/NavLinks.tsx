@@ -17,12 +17,16 @@ const NavLinks = () => {
       path: "/about",
     },
     {
-      name: "Contact",
+      name: "Services",
+      path: "/",
+    },
+    {
+      name: "Contact Us",
       path: "/contact",
     },
     {
-      name: "Blog",
-      path: "/blog",
+      name: "Projects",
+      path: "/projects",
     },
   ];
 

@@ -87,7 +87,11 @@ const Page = () => {
   console.log(project, id);
 
   if (!project) {
-    return <p>Project not found.</p>;
+    return (
+      <div className="flex min-h-screen items-center justify-center">
+        <h1 className="text-2xl font-black">Project not found</h1>
+      </div>
+    );
   }
 
   return (
