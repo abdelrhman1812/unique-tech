@@ -3,8 +3,9 @@
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import { useEffect, useState } from "react";
-import WZKKER from "../../../../public/assets/Projects/WZKKER.png";
 import workImage from "../../../../public/assets/image 1.png";
+import Eldwam from "../../../../public/assets/Projects/Eldwam.png";
+import WZKKER from "../../../../public/assets/Projects/WZKKER.png";
 
 interface SlideData {
   id: number;
@@ -25,8 +26,8 @@ const slidesData: SlideData[] = [
   },
   {
     id: 3,
-    image: workImage,
-    title: "WEBSITE - Bit Encryption",
+    image: Eldwam,
+    title: "WEBSITE - Eldwam",
   },
 ];
 
