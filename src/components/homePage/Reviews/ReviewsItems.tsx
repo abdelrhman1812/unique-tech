@@ -43,7 +43,7 @@ const ReviewsItems: React.FC = () => {
 
   return (
     <motion.div
-      className="container relative flex flex-col items-center justify-between gap-y-4 px-3 py-16 sm:px-8 lg:flex-row lg:gap-y-0 lg:px-[100px]"
+      className="relative flex flex-col items-center justify-between gap-x-14 gap-y-4 py-16 lg:flex-row"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
@@ -52,8 +52,8 @@ const ReviewsItems: React.FC = () => {
       {reviews.map((review, index) => (
         <motion.div
           key={review.id}
-          className={`w-full space-y-6 rounded-lg p-0 sm:p-4 lg:w-[540px] ${
-            index === 0 ? "lg:mr-[50px]" : "lg:ml-[50px]"
+          className={`w-full space-y-6 rounded-lg p-0 sm:py-4 ${
+            index === 0 ? "lg:mr-[0px]" : "lg:ml-[0px]"
           }`}
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

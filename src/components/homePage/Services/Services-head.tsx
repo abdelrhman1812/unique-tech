@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const ServicesHead = () => {
   return (
     <motion.div
-      className="w-[200px] py-5 text-start md:text-center"
+      className="w-[200px] py-5 text-start"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}

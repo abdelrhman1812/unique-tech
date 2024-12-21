@@ -21,7 +21,7 @@ const SingleServices = ({ service }: SingleServiceProps) => {
   return (
     <motion.div
       ref={ref}
-      className="space-y-8 border-b border-[#242424] px-2 py-5 md:border-0 md:p-8 lg:p-20"
+      className="space-y-8 border-b border-[#242424] px-2 py-5 md:border-0 md:py-8 lg:py-20"
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, ease: "easeOut" }}

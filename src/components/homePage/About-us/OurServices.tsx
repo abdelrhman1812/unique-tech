@@ -41,7 +41,7 @@ const services: Service[] = [
 const OurServices = () => {
   return (
     <section className="relative">
-      <div className="container grid grid-cols-1 gap-y-8 md:grid-cols-2 md:gap-0">
+      <div className="container grid grid-cols-1 gap-y-8 md:grid-cols-2 md:gap-x-14">
         {services.map((service) => (
           <SingleServices key={service.id} service={service} />
         ))}

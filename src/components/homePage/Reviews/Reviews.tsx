@@ -5,7 +5,9 @@ const Reviews = () => {
   return (
     <section className="bg-foreground">
       <TitleReviews />
-      <ReviewsItems />
+      <div className="container">
+        <ReviewsItems />
+      </div>
     </section>
   );
 };
