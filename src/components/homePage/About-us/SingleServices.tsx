@@ -44,6 +44,7 @@ const SingleServices = ({ service }: SingleServiceProps) => {
             alt={service.title}
             width={40}
             height={40}
+            className="w-[25px] md:w-[40px]"
           />
         </div>
 

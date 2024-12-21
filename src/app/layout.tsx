@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import Footer from "@/components/common/Footer/Footer";
 import NavBar from "@/components/common/NavBar/NavBar";
+import WhatsAppIcon from "@/components/common/WhatsAppIcon/WhatsAppIcon";
 import { Inter, Pacifico } from "next/font/google";
 import "./globals.css";
 
@@ -37,6 +38,7 @@ export default function RootLayout({
         </header>
         <main className="overflow-hidden">{children}</main>
         <Footer />
+        <WhatsAppIcon />
       </body>
     </html>
   );

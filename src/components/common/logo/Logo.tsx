@@ -1,15 +1,19 @@
+import Link from "next/link";
+
 const Logo = () => {
   return (
     <div className="logo">
-      <h4 className="text-black flex items-center w-[253px] h-[35px]">
-        <span className="w-[49px] h-[35px] text-[32px] font-extrabold relative flex items-center justify-center">
-          U
-          <span className="absolute bottom-0 left-0 right-0 bg-black w-[60%] mx-auto h-[3px]"></span>
-        </span>
-        <span className="w-[197px] sm:h-[35px] text-[20px] sm:text-[28px] font-semibold uppercase">
-          Unique Tech
-        </span>
-      </h4>
+      <Link href="/" passHref>
+        <h4 className="flex h-[35px] w-[253px] items-center text-black">
+          <span className="relative flex h-[35px] w-[49px] items-center justify-center text-[32px] font-extrabold">
+            U
+            <span className="absolute bottom-0 left-0 right-0 mx-auto h-[3px] w-[60%] bg-black"></span>
+          </span>
+          <span className="w-[197px] text-[20px] font-semibold uppercase sm:h-[35px] sm:text-[28px]">
+            Unique Tech
+          </span>
+        </h4>
+      </Link>
     </div>
   );
 };

@@ -54,12 +54,12 @@ export function MobileNav() {
                   {link.name}
                 </Link>
               ))}
-              <button
-                type="button"
-                className="mx-auto mt-5 h-[49px] w-[183px] rounded bg-bgBtn font-bold capitalize text-white transition-all duration-300 ease-in-out hover:opacity-80"
+              <Link
+                href={"/contact"}
+                className="mx-auto mt-5 flex h-[49px] w-[183px] items-center justify-center rounded-[12px] bg-bgBtn font-bold capitalize text-white transition-all duration-300 ease-in-out hover:opacity-80"
               >
                 Get In Touch
-              </button>
+              </Link>
             </nav>
           </SheetContent>
         </Sheet>

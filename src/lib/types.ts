@@ -12,7 +12,7 @@ export interface Projects {
   id: number;
   title: string;
   description: string;
-  images: StaticImageData[];
-  imageCover: StaticImageData;
+  images: (StaticImageData | string)[];
+  imageCover: StaticImageData | string;
   links: string;
 }

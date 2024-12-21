@@ -24,7 +24,7 @@ const CollaborateContent = () => {
       </motion.p>
 
       <Link href="/contact" passHref>
-        <motion.a
+        <motion.button
           className="flex h-[50px] w-[200px] items-center justify-center rounded-[11px] bg-white text-lg font-bold md:h-[66px] md:w-[246px] md:text-xl lg:text-2xl"
           whileHover={{ scale: 1.1 }}
           initial={{ opacity: 0 }}
@@ -32,7 +32,7 @@ const CollaborateContent = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           LET`S Talk
-        </motion.a>
+        </motion.button>
       </Link>
     </motion.div>
   );

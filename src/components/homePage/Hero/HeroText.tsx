@@ -6,7 +6,7 @@ import Link from "next/link";
 const HeroText = () => {
   return (
     <motion.div
-      className="flex w-full flex-col px-4 md:w-[700px] md:flex-row md:space-x-6"
+      className="flex w-full flex-col md:w-[700px] md:flex-row md:space-x-6"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
@@ -40,14 +40,14 @@ const HeroText = () => {
           the competition.
         </motion.p>
         <Link href="/contact" passHref>
-          <motion.a
+          <motion.button
             className="hover:bg-bgBtnHover flex h-[66px] w-[246px] items-center justify-center rounded-[11px] bg-bgBtn p-[10px] font-bold text-white transition sm:mx-0"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
             LET’S TALK
-          </motion.a>
+          </motion.button>
         </Link>
       </div>
     </motion.div>

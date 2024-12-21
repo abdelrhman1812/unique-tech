@@ -52,7 +52,7 @@ const NavLinks = () => {
         </ul>
         <Link
           href={"/contact"}
-          className="flex h-[49px] w-[183px] items-center justify-center rounded bg-bgBtn font-bold capitalize text-white transition-all duration-300 ease-in-out hover:opacity-80"
+          className="flex h-[49px] w-[183px] items-center justify-center rounded-[12px] bg-bgBtn font-bold capitalize text-white transition-all duration-300 ease-in-out hover:opacity-80"
         >
           Get In Touch
         </Link>

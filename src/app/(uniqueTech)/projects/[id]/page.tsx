@@ -10,7 +10,7 @@ import { useParams } from "next/navigation";
 import { useState } from "react";
 
 type SlideProps = {
-  image: StaticImageData;
+  image: StaticImageData | string;
 };
 
 type DotsNavigationProps = {
@@ -25,7 +25,7 @@ type SliderProps = {
 
 const Slide = ({ image }: SlideProps) => (
   <motion.div
-    className="w-[588px] transform"
+    className="w-full transform md:w-[588px]"
     initial={{ opacity: 0, scale: 0.8 }}
     animate={{ opacity: 1, scale: 1 }}
     exit={{ opacity: 0, scale: 0.8 }}
@@ -36,7 +36,7 @@ const Slide = ({ image }: SlideProps) => (
       alt="Slide image"
       width={588}
       height={472}
-      className="w-[400px] rounded-md md:w-full"
+      className=":w-full rounded-md"
       loading="eager"
       priority
     />
@@ -119,14 +119,14 @@ const Page = () => {
               {project.description}
             </p>
             <Link href={"/contact"} passHref>
-              <motion.a
+              <motion.button
                 className="hover:bg-bgBtnHover mt-5 flex h-[66px] w-[246px] items-center justify-center rounded-[11px] bg-bgBtn p-[10px] font-bold text-white transition sm:mx-0"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.6, duration: 0.8 }}
               >
                 LET’S TALK
-              </motion.a>
+              </motion.button>
             </Link>
           </div>
         </motion.div>

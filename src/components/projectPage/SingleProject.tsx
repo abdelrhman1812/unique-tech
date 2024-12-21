@@ -7,8 +7,11 @@ import Link from "next/link";
 type ProjectType = {
   project: {
     id: number;
-    image: StaticImageData;
     title: string;
+    description: string;
+    images: (StaticImageData | string)[];
+    imageCover: StaticImageData | string;
+    links: string;
   };
 };
 
@@ -22,16 +25,15 @@ const SingleProject = ({ project }: ProjectType) => {
       transition={{ duration: 0.6, ease: "easeInOut" }}
     >
       <motion.div
-        className="overflow-hidden rounded-lg"
+        className="relative h-[472px] w-full overflow-hidden md:w-[608px]"
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
         <Image
-          className="w-full rounded-lg"
-          src={project.image}
+          className="w-full object-cover"
+          src={project.imageCover}
           alt={project.title}
-          width={608}
-          height={472}
+          fill
         />
       </motion.div>
       <motion.div
@@ -42,10 +44,11 @@ const SingleProject = ({ project }: ProjectType) => {
         transition={{ duration: 0.4, delay: 0.2, ease: "easeInOut" }}
       >
         <Link href={`/projects/${project.id}`}>
-          <h2 className="text-xl font-bold md:text-xl">
-            {project.title.split(" ").slice(0, 2).join(" ")}
+          <h2 className="mt-3 text-xl font-bold md:text-xl">
+            WEBSITE -
             <span className="font-normal text-black opacity-70">
-              {" " + project.title.split(" ").slice(2).join(" ")}
+              {" "}
+              {project.title}
             </span>
           </h2>
         </Link>

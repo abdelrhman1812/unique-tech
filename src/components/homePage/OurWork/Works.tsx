@@ -1,38 +1,13 @@
 "use client";
 
+import { mock_projects } from "@/components/data/mock-projects";
+import { Projects } from "@/lib/types";
 import { motion } from "framer-motion";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { useEffect, useState } from "react";
-import workImage from "../../../../public/assets/image 1.png";
-import Eldwam from "../../../../public/assets/Projects/Eldwam.png";
-import WZKKER from "../../../../public/assets/Projects/WZKKER.png";
-
-interface SlideData {
-  id: number;
-  image: StaticImageData;
-  title: string;
-}
-
-const slidesData: SlideData[] = [
-  {
-    id: 1,
-    image: workImage,
-    title: "WEBSITE - Bit Encryption",
-  },
-  {
-    id: 2,
-    image: WZKKER,
-    title: "WEBSITE - Boosting your efficiency",
-  },
-  {
-    id: 3,
-    image: Eldwam,
-    title: "WEBSITE - Eldwam",
-  },
-];
 
 interface SlideProps {
-  slide: SlideData;
+  slide: Projects;
 }
 
 const Slide: React.FC<SlideProps> = ({ slide }) => (
@@ -44,18 +19,22 @@ const Slide: React.FC<SlideProps> = ({ slide }) => (
     transition={{ duration: 0.6, ease: "easeOut" }}
   >
     <Image
-      src={slide.image}
+      src={slide.imageCover}
       alt={`Slide ${slide.id}`}
       width={588}
       height={472}
       className="w-full"
     />
-    <p className="mt-2 text-lg font-bold text-gray-700">{slide.title}</p>
+    <h2 className="mt-3 text-xl font-bold md:text-xl">
+      WEBSITE -
+      <span className="font-normal text-black opacity-70"> {slide.title}</span>
+    </h2>
+    {/* <p className="mt-2 text-lg font-bold text-gray-700">{slide.title}</p> */}
   </motion.div>
 );
 
 interface DotsNavigationProps {
-  slides: SlideData[];
+  slides: Projects[];
   currentIndex: number;
   onDotClick: (index: number) => void;
 }
@@ -83,7 +62,7 @@ const Slider: React.FC = () => {
   // Set the interval to automatically switch slides every 3 seconds
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % slidesData.length);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % mock_projects.length);
     }, 3000); // Change slide every 3 seconds
 
     // Clean up the interval on component unmount
@@ -91,8 +70,8 @@ const Slider: React.FC = () => {
   }, []);
 
   const visibleSlides = [
-    slidesData[currentIndex],
-    slidesData[(currentIndex + 1) % slidesData.length],
+    mock_projects[currentIndex],
+    mock_projects[(currentIndex + 1) % mock_projects.length],
   ];
 
   return (
@@ -116,7 +95,7 @@ const Slider: React.FC = () => {
 
       {/* Dots Navigation */}
       <DotsNavigation
-        slides={slidesData}
+        slides={mock_projects}
         currentIndex={currentIndex}
         onDotClick={setCurrentIndex}
       />

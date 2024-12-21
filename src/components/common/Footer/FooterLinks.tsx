@@ -15,7 +15,7 @@ const FooterLinks = () => {
     { id: 2, title: "ABOUT", path: "/about" },
     { id: 3, title: "SERVICES", path: "#services" },
     { id: 4, title: "PROJECTS", path: "/projects" },
-    { id: 5, title: "CONTACTS", path: "/contact" },
+    { id: 5, title: "CONTACTS", path: "/contact Us" },
   ];
 
   return (

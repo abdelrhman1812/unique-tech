@@ -5,14 +5,14 @@ import { motion } from "framer-motion";
 const TitleReviews = () => {
   return (
     <motion.div
-      className="text-center py-[120px] border-b border-b-black"
+      className="border-b border-b-black py-[120px] text-center"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
       viewport={{ once: true }}
     >
       <motion.h2
-        className="font-pacifico text-white font-semibold text-[28px] sm:text-[36px] md:text-[48px] leading-tight mb-6"
+        className="mb-6 font-pacifico text-[28px] font-semibold leading-tight text-white sm:text-[36px] md:text-[48px]"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.2 }}
@@ -22,7 +22,7 @@ const TitleReviews = () => {
       </motion.h2>
 
       <motion.p
-        className="font-Poppins w-full max-w-[840px] mx-auto text-[#E6E6E6] text-[18px] leading-7 font-normal"
+        className="mx-auto w-full max-w-[840px] font-Poppins text-[14px] font-normal leading-7 text-[#E6E6E6] md:text-[18px]"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.4 }}
