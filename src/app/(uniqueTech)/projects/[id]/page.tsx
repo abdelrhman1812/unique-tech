@@ -25,7 +25,7 @@ type SliderProps = {
 
 const Slide = ({ image }: SlideProps) => (
   <motion.div
-    className="w-full transform md:w-[588px]"
+    className="relative w-full transform md:w-[588px]"
     initial={{ opacity: 0, scale: 0.8 }}
     animate={{ opacity: 1, scale: 1 }}
     exit={{ opacity: 0, scale: 0.8 }}
@@ -36,7 +36,7 @@ const Slide = ({ image }: SlideProps) => (
       alt="Slide image"
       width={588}
       height={472}
-      className=":w-full rounded-md"
+      className="w-[450px] md:w-full"
       loading="eager"
       priority
     />
