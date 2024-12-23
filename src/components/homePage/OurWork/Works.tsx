@@ -4,6 +4,7 @@ import { mock_projects } from "@/components/data/mock-projects";
 import { Projects } from "@/lib/types";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 interface SlideProps {
@@ -25,10 +26,15 @@ const Slide: React.FC<SlideProps> = ({ slide }) => (
       height={472}
       className="w-full"
     />
-    <h2 className="mt-3 text-xl font-bold md:text-xl">
-      WEBSITE -
-      <span className="font-normal text-black opacity-70"> {slide.title}</span>
-    </h2>
+    <Link href={`/projects/${slide.id}`}>
+      <h2 className="mt-3 text-xl font-bold md:text-xl">
+        WEBSITE -
+        <span className="font-normal text-black opacity-70">
+          {" "}
+          {slide.title}
+        </span>
+      </h2>
+    </Link>
     {/* <p className="mt-2 text-lg font-bold text-gray-700">{slide.title}</p> */}
   </motion.div>
 );
