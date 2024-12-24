@@ -1,6 +1,7 @@
 import AboutUs from "../homePage/About-us/About-us";
 import OurMission from "../homePage/About-us/OurMission";
 import ReviewsItemsAbout from "../homePage/About-us/RewiewsItemsAbout";
+import TitleReviews from "../homePage/Reviews/TitleReviews";
 import WhyUs from "./WhyUs";
 
 const AboutPage = () => {
@@ -9,7 +10,14 @@ const AboutPage = () => {
       <AboutUs />
       <WhyUs />
       <OurMission />
-      <ReviewsItemsAbout />
+      <div>
+        <section className="bg-foreground">
+          <TitleReviews />
+          <div className="container">
+            <ReviewsItemsAbout />
+          </div>
+        </section>
+      </div>
     </main>
   );
 };

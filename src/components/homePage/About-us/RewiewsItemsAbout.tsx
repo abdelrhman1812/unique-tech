@@ -65,7 +65,7 @@ const ReviewsItemsAbout: React.FC = () => {
             <h3 className="font-Poppins text-[24px] font-medium leading-10 text-white sm:text-[28px]">
               {review.title}
             </h3>
-            <p className="font-Poppins text-lg font-light leading-7 text-[#e6e6e6] md:min-h-[210px]">
+            <p className="font-Poppins text-lg font-light leading-7 text-[#e6e6e6]">
               {review.description}
             </p>
           </div>
