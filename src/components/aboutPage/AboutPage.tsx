@@ -1,6 +1,6 @@
 import AboutUs from "../homePage/About-us/About-us";
 import OurMission from "../homePage/About-us/OurMission";
-import Reviews from "../homePage/Reviews/Reviews";
+import ReviewsItemsAbout from "../homePage/About-us/RewiewsItemsAbout";
 import WhyUs from "./WhyUs";
 
 const AboutPage = () => {
@@ -9,7 +9,7 @@ const AboutPage = () => {
       <AboutUs />
       <WhyUs />
       <OurMission />
-      <Reviews />
+      <ReviewsItemsAbout />
     </main>
   );
 };
