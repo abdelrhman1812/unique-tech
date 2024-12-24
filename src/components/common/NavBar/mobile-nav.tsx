@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Sheet,
   SheetContent,
@@ -8,11 +10,13 @@ import {
 import { navLinks } from "@/lib/constants/navigation";
 import { Menu } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -24,6 +28,33 @@ export function MobileNav() {
 
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
+
+  const handleNavClick = (path: string) => {
+    setIsOpen(false);
+
+    if (path.includes("#services")) {
+      // إذا كنا بالفعل على الصفحة الرئيسية
+      if (window.location.pathname === "/") {
+        const servicesSection = document.getElementById("services");
+        if (servicesSection) {
+          servicesSection.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        // إذا كنا على صفحة أخرى، انتقل للصفحة الرئيسية أولاً
+        router.push("/");
+        // استخدم مراقبة التغيير للتأكد من جاهزية الصفحة
+        const checkServicesSection = setInterval(() => {
+          const servicesSection = document.getElementById("services");
+          if (servicesSection) {
+            clearInterval(checkServicesSection);
+            servicesSection.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 100);
+      }
+    } else {
+      router.push(path);
+    }
+  };
 
   return (
     <>
@@ -45,17 +76,17 @@ export function MobileNav() {
             </SheetHeader>
             <nav className="flex flex-col gap-3 py-6">
               {navLinks.map((link, index) => (
-                <Link
+                <button
                   key={index}
-                  href={link.path}
-                  className="block border-b border-gray-200 py-3 ps-3 text-lg"
+                  onClick={() => handleNavClick(link.path)}
+                  className="block border-b border-gray-200 py-3 ps-3 text-left text-lg"
                   aria-label={link.name}
                 >
                   {link.name}
-                </Link>
+                </button>
               ))}
               <Link
-                href={"/contact"}
+                href="/contact"
                 className="mx-auto mt-5 flex h-[49px] w-[183px] items-center justify-center rounded-[12px] bg-bgBtn font-bold capitalize text-white transition-all duration-300 ease-in-out hover:opacity-80"
               >
                 Get In Touch
