@@ -24,7 +24,7 @@ const ReviewsItems: React.FC = () => {
         "I would like to express my sincere thanks and appreciation for the outstanding work we have done together. My experience working with you has been truly exceptional, and I am very pleased with the collaboration. Your commitment to quality and punctuality throughout the project made the entire process smooth and successful.",
       user: {
         name: "ENG AHMED MAHMOUD",
-        title: "CEO of WzkKir app.",
+        title: "CEO of Wzkker app.",
         image: imgProfile,
       },
     },

@@ -39,7 +39,7 @@ Scan Historical Sites: Using scanning technology, you can scan monuments and his
     images: [
       "/assets/Projects/misr/misr1.png",
       "/assets/Projects/misr/misr2.png",
-      "/assets/Projects/misr/misr3.png",
+      "/assets/Projects/misr/misr3-2.png",
       "/assets/Projects/misr/misr4.png",
     ],
     imageCover: "/assets/Projects/misr/misr cover.png",
@@ -51,6 +51,7 @@ Scan Historical Sites: Using scanning technology, you can scan monuments and his
     title: "Eldwam",
     description: `It is a Saudi electronic platform aimed at facilitating the recruitment process and job search in both the public and private sectors. The site offers a range of services, including posting job openings, submitting resumes, applying for jobs, and connecting job seekers with employers. The site is distinguished by several features: Ease of use: The site's design is simple, allowing users to easily browse and search for jobs by category. Online recruitment: Users can apply for jobs directly through the site, saving time and effort.`,
     images: [
+      "/assets/Projects/Eldwam/eldwam.png",
       "/assets/Projects/Eldwam/eldwam1.png",
       "/assets/Projects/Eldwam/eldwam2.png",
       "/assets/Projects/Eldwam/eldwam3.png",

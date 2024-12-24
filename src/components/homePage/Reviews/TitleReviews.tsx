@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const TitleReviews = () => {
   return (
     <motion.div
-      className="border-b border-b-black p-1 py-[120px] text-center"
+      className="mx-auto w-[90%] border-b border-b-black p-1 py-[120px] text-center"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}

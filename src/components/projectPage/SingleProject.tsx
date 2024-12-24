@@ -47,7 +47,7 @@ const SingleProject = ({ project }: ProjectType) => {
       >
         {project.id !== 6 ? (
           <Link href={`/projects/${project.id}`}>
-            <h2 className="mt-3 text-xl font-bold md:text-xl">
+            <h2 className="mt-3 text-xl font-bold capitalize md:text-xl">
               {project.type} -
               <span className="font-normal text-black opacity-70">
                 {" "}

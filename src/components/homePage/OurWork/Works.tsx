@@ -27,7 +27,7 @@ const Slide: React.FC<SlideProps> = ({ slide }) => (
       className="w-full"
     />
     <Link href={`/projects/${slide.id}`}>
-      <h2 className="mt-3 text-xl font-bold md:text-xl">
+      <h2 className="mt-3 text-xl font-bold capitalize md:text-xl">
         {slide.type} -
         <span className="font-normal text-black opacity-70">
           {" "}

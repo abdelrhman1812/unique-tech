@@ -55,6 +55,10 @@ const ContactForm: React.FC = () => {
     onSubmit: handleFormSubmit,
   });
 
+  const isFormValid =
+    Object.values(formik.values).every((value) => value.trim() !== "") &&
+    Object.keys(formik.errors).length === 0;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: -20 }}
@@ -261,7 +265,7 @@ const ContactForm: React.FC = () => {
           transition={{ delay: 0.8 }}
         >
           <button
-            disabled={!(formik.isValid && formik.dirty)}
+            disabled={!isFormValid}
             type="submit"
             className="shadow-[0px 2px 5px 0px rgba(38, 51, 77, 0.03)] my-3 h-[52px] w-[206PX] transform rounded-[9px] bg-black px-[35px] py-[15px] text-white transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-md"
           >

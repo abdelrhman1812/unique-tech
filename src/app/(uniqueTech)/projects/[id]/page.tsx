@@ -106,12 +106,16 @@ const Page = () => {
           </div>
           <div>
             <motion.h2
-              className="mb-3 text-[32px] font-bold text-[#171717] md:text-[48px] lg:text-[64px]"
+              className="mb-3 text-[32px] font-bold capitalize text-[#171717] md:text-[48px] lg:text-[64px]"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
-              {project.title}
+              {project.type} -
+              <span className="font-normal text-black opacity-70">
+                {" "}
+                {project.title}
+              </span>
             </motion.h2>
 
             <Slider slides={project.images.map((image) => ({ image }))} />
