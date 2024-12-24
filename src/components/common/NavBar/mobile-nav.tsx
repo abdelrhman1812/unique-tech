@@ -33,16 +33,13 @@ export function MobileNav() {
     setIsOpen(false);
 
     if (path.includes("#services")) {
-      // إذا كنا بالفعل على الصفحة الرئيسية
       if (window.location.pathname === "/") {
         const servicesSection = document.getElementById("services");
         if (servicesSection) {
           servicesSection.scrollIntoView({ behavior: "smooth" });
         }
       } else {
-        // إذا كنا على صفحة أخرى، انتقل للصفحة الرئيسية أولاً
         router.push("/");
-        // استخدم مراقبة التغيير للتأكد من جاهزية الصفحة
         const checkServicesSection = setInterval(() => {
           const servicesSection = document.getElementById("services");
           if (servicesSection) {

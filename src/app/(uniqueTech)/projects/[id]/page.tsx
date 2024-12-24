@@ -1,4 +1,5 @@
 "use client";
+
 import { mock_projects } from "@/components/data/mock-projects";
 import Collaborate from "@/components/homePage/Collaborate/Collaborate";
 import OurWork from "@/components/homePage/OurWork/OurWork";
@@ -7,7 +8,7 @@ import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type SlideProps = {
   image: StaticImageData | string;
@@ -64,6 +65,16 @@ const DotsNavigation = ({
 
 const Slider = ({ slides }: SliderProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Set the interval to automatically switch slides every 3 seconds
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+    }, 3000); // Change slide every 3 seconds
+
+    // Clean up the interval on component unmount
+    return () => clearInterval(intervalId);
+  }, [slides.length]);
 
   return (
     <div className="my-12">

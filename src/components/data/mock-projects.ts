@@ -21,8 +21,9 @@ export const mock_projects: Projects[] = [
     id: 2,
     title: "Wzkker",
     description:
-      "We are pleased to offer all services for free.Wadhkir includes: The Quran ,Daily dhikr ,Duas ,Adhan  ,notifications ,Prayer times ,Qibla direction ,ruqyah ,a variety of libraries for Hadith and their interpretations And much more..",
+      "We are pleased to offer all services for free. Wzkker includes: The Quran ,Daily dhikr ,Duas ,Adhan  ,notifications ,Prayer times ,Qibla direction ,ruqyah ,a variety of libraries for Hadith and their interpretations And much more..",
     images: [
+      "/assets/Projects/Wzkker/zkr.png",
       "/assets/Projects/Wzkker/zkr1.png",
       "/assets/Projects/Wzkker/zkr2.png",
       "/assets/Projects/Wzkker/zkr3.png",
@@ -66,6 +67,7 @@ Scan Historical Sites: Using scanning technology, you can scan monuments and his
     description:
       "Since 1986, the office has been specialized in all engineering works including architectural and structural design, execution, supervision, obtaining permits, and all types of finishing. We have had the honor of collaborating with major real estate investment companies and working in the field of contracting, building towers, schools, water stations, fuel and natural gas filling stations, as well as hospitals in various cities in Egypt.",
     images: [
+      "/assets/Projects/maktab/maktab.png",
       "/assets/Projects/maktab/maktab1.png",
       "/assets/Projects/maktab/maktab2.png",
       "/assets/Projects/maktab/maktab3.png",
