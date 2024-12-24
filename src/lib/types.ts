@@ -15,4 +15,5 @@ export interface Projects {
   images: (StaticImageData | string)[];
   imageCover: StaticImageData | string;
   links: string;
+  type: string;
 }

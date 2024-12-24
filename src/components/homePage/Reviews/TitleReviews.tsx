@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const TitleReviews = () => {
   return (
     <motion.div
-      className="border-b border-b-black py-[120px] text-center"
+      className="border-b border-b-black p-1 py-[120px] text-center"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
@@ -22,7 +22,7 @@ const TitleReviews = () => {
       </motion.h2>
 
       <motion.p
-        className="mx-auto w-full max-w-[840px] font-Poppins text-[14px] font-normal leading-7 text-[#E6E6E6] md:text-[18px]"
+        className="mx-auto w-full max-w-[840px] font-Poppins text-[12px] font-normal leading-7 text-[#E6E6E6] md:text-[18px]"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.4 }}

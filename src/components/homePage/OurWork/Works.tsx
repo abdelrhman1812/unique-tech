@@ -28,14 +28,13 @@ const Slide: React.FC<SlideProps> = ({ slide }) => (
     />
     <Link href={`/projects/${slide.id}`}>
       <h2 className="mt-3 text-xl font-bold md:text-xl">
-        WEBSITE -
+        {slide.type} -
         <span className="font-normal text-black opacity-70">
           {" "}
           {slide.title}
         </span>
       </h2>
     </Link>
-    {/* <p className="mt-2 text-lg font-bold text-gray-700">{slide.title}</p> */}
   </motion.div>
 );
 
@@ -54,7 +53,9 @@ const DotsNavigation: React.FC<DotsNavigationProps> = ({
     {slides.map((_, index) => (
       <motion.span
         key={index}
-        className={`h-[12px] w-[12px] cursor-pointer rounded-full bg-gray-300 transition-all duration-300 ${index === currentIndex ? "scale-125 bg-gray-700" : ""}`}
+        className={`h-[12px] w-[12px] cursor-pointer rounded-full bg-gray-300 transition-all duration-300 ${
+          index === currentIndex ? "scale-125 bg-gray-700" : ""
+        }`}
         onClick={() => onDotClick(index)}
         whileTap={{ scale: 1.4 }}
       ></motion.span>
@@ -65,19 +66,23 @@ const DotsNavigation: React.FC<DotsNavigationProps> = ({
 const Slider: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const filteredProjects = mock_projects.filter((slide) =>
+    [1, 2, 4].includes(slide.id),
+  );
+
   // Set the interval to automatically switch slides every 3 seconds
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % mock_projects.length);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % filteredProjects.length);
     }, 3000); // Change slide every 3 seconds
 
     // Clean up the interval on component unmount
     return () => clearInterval(intervalId);
-  }, []);
+  }, [filteredProjects.length]);
 
   const visibleSlides = [
-    mock_projects[currentIndex],
-    mock_projects[(currentIndex + 1) % mock_projects.length],
+    filteredProjects[currentIndex],
+    filteredProjects[(currentIndex + 1) % filteredProjects.length],
   ];
 
   return (
@@ -101,7 +106,7 @@ const Slider: React.FC = () => {
 
       {/* Dots Navigation */}
       <DotsNavigation
-        slides={mock_projects}
+        slides={filteredProjects}
         currentIndex={currentIndex}
         onDotClick={setCurrentIndex}
       />

@@ -1,11 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect } from "react";
 import { MobileNav } from "./mobile-nav";
 
 const NavLinks = () => {
   const pathname = usePathname();
+  const router = useRouter();
 
   const navLinks = [
     {
@@ -18,7 +20,7 @@ const NavLinks = () => {
     },
     {
       name: "Services",
-      path: "/",
+      path: "#services",
     },
     {
       name: "Contact Us",
@@ -32,6 +34,42 @@ const NavLinks = () => {
 
   const isActive = (href: string) => pathname === href;
 
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash === "#services") {
+        const servicesSection = document.getElementById("services");
+        if (servicesSection) {
+          servicesSection.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    };
+
+    handleHashChange();
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
+
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    path: string,
+  ) => {
+    if (path === "#services") {
+      e.preventDefault();
+      if (pathname === "/") {
+        const servicesSection = document.getElementById("services");
+        if (servicesSection) {
+          servicesSection.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        router.push("/#services");
+      }
+    }
+  };
+
   return (
     <div className="flex items-center justify-end">
       <MobileNav />
@@ -41,7 +79,10 @@ const NavLinks = () => {
             <li key={index} className="nav-item group relative">
               <Link legacyBehavior href={link.path}>
                 <a
-                  className={`nav-link relative h-[22px] w-[53px] text-[18px] ${isActive(link.path) ? "text-black" : "text-grayMuted"} transition-all duration-300 ease-in-out`}
+                  className={`nav-link relative h-[22px] w-[53px] text-[18px] ${
+                    isActive(link.path) ? "text-black" : "text-grayMuted"
+                  } transition-all duration-300 ease-in-out`}
+                  onClick={(e) => handleClick(e, link.path)}
                 >
                   {link.name}
                   <span className="absolute -bottom-3 left-0 h-[2px] w-0 bg-black transition-all duration-300 ease-in-out group-hover:w-full"></span>

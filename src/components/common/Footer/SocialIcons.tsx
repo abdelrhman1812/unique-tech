@@ -6,7 +6,7 @@ import Link from "next/link";
 const SocialIcons = () => {
   return (
     <motion.ul
-      className="flex space-x-4 mx-auto justify-between items-center w-[135px] my-5"
+      className="mx-auto my-5 flex w-[135px] items-center justify-between space-x-4"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
@@ -17,7 +17,12 @@ const SocialIcons = () => {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.3 }}
       >
-        <Link href={"/"} className="w-[22px] h-[22px]">
+        <Link
+          href={
+            " https://www.facebook.com/profile.php?id=61567414448940&mibextid=ZbWKwL"
+          }
+          className="h-[22px] w-[22px]"
+        >
           <svg
             width="10"
             height="20"
@@ -39,7 +44,7 @@ const SocialIcons = () => {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.3, delay: 0.2 }}
       >
-        <Link href={"/"} className="w-[22px] h-[22px]">
+        <Link href={"/"} className="h-[22px] w-[22px]">
           <svg
             width="22"
             height="18"
@@ -61,7 +66,7 @@ const SocialIcons = () => {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.3, delay: 0.4 }}
       >
-        <Link href={"/"} className="w-[22px] h-[22px]">
+        <Link href={"/"} className="h-[22px] w-[22px]">
           <svg
             width="22"
             height="22"

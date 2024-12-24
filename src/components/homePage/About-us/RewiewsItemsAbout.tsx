@@ -15,27 +15,28 @@ interface Review {
   };
 }
 
-const ReviewsItems: React.FC = () => {
+const ReviewsItemsAbout: React.FC = () => {
   const reviews: Review[] = [
     {
       id: 1,
-      title: "I would like to express my sincere thanks and appreciation..",
+      title:
+        "SquareUp has been Instrumental in Transforming our Online Presence. ",
       description:
-        "I would like to express my sincere thanks and appreciation for the outstanding work we have done together. My experience working with you has been truly exceptional, and I am very pleased with the collaboration. Your commitment to quality and punctuality throughout the project made the entire process smooth and successful.",
+        "Their team's expertise in web development and design resulted in a visually stunning and user-friendly e-commerce platform. Our online sales have skyrocketed, and we couldn't be happier.",
       user: {
-        name: "ENG AHMED MAHMOUD",
-        title: "CEO of WzkKir app.",
+        name: "John Smith",
+        title: "CEO of Chic Boutique.",
         image: imgProfile,
       },
     },
     {
       id: 2,
-      title: "I wanted to take a moment to thank you for..",
+      title: "Working with SquareUp was a breeze.",
       description:
-        "I wanted to take a moment to thank you for the exceptional experience I had working with your team. It has truly been a pleasure collaborating with you. Your professionalism and dedication to meeting deadlines were impressive and made the entire process smooth and enjoyable.",
+        "They understood our vision for a mobile app that streamlined our food delivery service. The app they delivered exceeded our expectations, and our customers love the seamless ordering experience. SquareUp is a trusted partner we highly recommend.",
       user: {
-        name: "ENG MAHMOUD  ALI",
-        title: "Founder of Elbasuony office.",
+        name: "Sarah Johnson",
+        title: "Founder of HungryBites.",
         image: imgProfile,
       },
     },
@@ -96,4 +97,4 @@ const ReviewsItems: React.FC = () => {
   );
 };
 
-export default ReviewsItems;
+export default ReviewsItemsAbout;

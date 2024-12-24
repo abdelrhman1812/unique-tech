@@ -13,9 +13,9 @@ const FooterLinks = () => {
   const links: Links[] = [
     { id: 1, title: "HOME", path: "/" },
     { id: 2, title: "ABOUT", path: "/about" },
-    { id: 3, title: "SERVICES", path: "#services" },
+    { id: 3, title: "SERVICES", path: "/" },
     { id: 4, title: "PROJECTS", path: "/projects" },
-    { id: 5, title: "CONTACTS US", path: "/contact" },
+    { id: 5, title: "CONTACT US", path: "/contact" },
   ];
 
   return (

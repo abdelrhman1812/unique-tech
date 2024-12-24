@@ -12,28 +12,30 @@ type ProjectType = {
     images: (StaticImageData | string)[];
     imageCover: StaticImageData | string;
     links: string;
+    type: string;
   };
 };
 
 const SingleProject = ({ project }: ProjectType) => {
   return (
     <motion.div
-      className="space-y-4 overflow-hidden"
+      className="overflow-hidden md:space-y-4"
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
     >
       <motion.div
-        className="relative h-[472px] w-full overflow-hidden md:w-[608px]"
+        className="relative w-full overflow-hidden"
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
         <Image
-          className="w-full object-cover"
+          // className="w-full"
           src={project.imageCover}
           alt={project.title}
-          fill
+          width={588}
+          height={472}
         />
       </motion.div>
       <motion.div
@@ -43,15 +45,27 @@ const SingleProject = ({ project }: ProjectType) => {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.4, delay: 0.2, ease: "easeInOut" }}
       >
-        <Link href={`/projects/${project.id}`}>
-          <h2 className="mt-3 text-xl font-bold md:text-xl">
-            WEBSITE -
-            <span className="font-normal text-black opacity-70">
-              {" "}
-              {project.title}
-            </span>
-          </h2>
-        </Link>
+        {project.id !== 6 ? (
+          <Link href={`/projects/${project.id}`}>
+            <h2 className="mt-3 text-xl font-bold md:text-xl">
+              {project.type} -
+              <span className="font-normal text-black opacity-70">
+                {" "}
+                {project.title}
+              </span>
+            </h2>
+          </Link>
+        ) : (
+          <Link href={`/projects`}>
+            <h2 className="mt-3 text-xl font-bold md:text-xl">
+              {project.type} -
+              <span className="font-normal text-black opacity-70">
+                {" "}
+                {project.title}
+              </span>
+            </h2>
+          </Link>
+        )}
       </motion.div>
     </motion.div>
   );
