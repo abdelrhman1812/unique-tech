@@ -9,9 +9,10 @@ const WhatsAppIcon = () => {
           className="absolute z-[2] flex h-full w-[60%] cursor-pointer text-[24px] font-bold opacity-100 transition-opacity duration-200"
           fill="currentColor"
           xmlns="http://www.w3.org/2000/svg"
-          onClick={() =>
-            window.open("https://wa.me/+2001008034761?text=welcome", "_blank")
-          }
+          onClick={() => {
+            const url = "https://wa.me/+201002504361?text=welcome";
+            window.open(url, "_blank");
+          }}
         >
           <path
             fill="white"

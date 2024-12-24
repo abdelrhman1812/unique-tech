@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const CollaborateHead = () => {
   return (
     <motion.div
-      className="w-full py-5 text-start md:w-[200px] md:text-center"
+      className="w-full py-5 text-start md:w-[200px]"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
