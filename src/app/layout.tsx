@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import "react-toastify/dist/ReactToastify.css";
 
 import Footer from "@/components/common/Footer/Footer";
 import NavBar from "@/components/common/NavBar/NavBar";
 import WhatsAppIcon from "@/components/common/WhatsAppIcon/WhatsAppIcon";
 import { Inter, Pacifico } from "next/font/google";
+import { ToastContainer } from "react-toastify";
 import "./globals.css";
 
 const inter = Inter({
@@ -34,6 +36,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} ${pacifico.variable} antialiased`}>
         <header>
+          <ToastContainer />
+
           <NavBar />
         </header>
         <main className="overflow-hidden">{children}</main>

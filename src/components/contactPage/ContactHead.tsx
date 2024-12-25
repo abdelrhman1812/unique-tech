@@ -24,9 +24,9 @@ const ContactHead = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.4, duration: 0.8 }}
       >
-        We have developed a unique space where you can work and create. We
-        thought of everything to the smallest detail. You will be able to
-        conduct your business, conduct meetings, meetings.
+        We value your feedback and are here to assist you. For any inquiries or
+        comments, feel free to reach out to us via email or by filling out the
+        form below. Our team will respond as soon as possible.
       </motion.p>
     </motion.section>
   );

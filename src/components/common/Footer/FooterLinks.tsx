@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { scroller } from "react-scroll";
 
 interface Links {
   id: number;
@@ -10,13 +11,40 @@ interface Links {
 }
 
 const FooterLinks = () => {
+  const router = useRouter();
+
   const links: Links[] = [
     { id: 1, title: "HOME", path: "/" },
     { id: 2, title: "ABOUT", path: "/about" },
-    { id: 3, title: "SERVICES", path: "/" },
+    { id: 3, title: "SERVICES", path: "/#services" },
     { id: 4, title: "PROJECTS", path: "/projects" },
     { id: 5, title: "CONTACT US", path: "/contact" },
   ];
+
+  const handleLinkClick = (path: string) => {
+    if (path.includes("#services")) {
+      if (window.location.pathname === "/") {
+        // Scroll directly if on home page
+        scroller.scrollTo("services", {
+          smooth: true,
+          duration: 500,
+          offset: -50,
+        });
+      } else {
+        // Navigate to home and scroll
+        router.push("/");
+        setTimeout(() => {
+          scroller.scrollTo("services", {
+            smooth: true,
+            duration: 500,
+            offset: -50,
+          });
+        }, 100);
+      }
+    } else {
+      router.push(path);
+    }
+  };
 
   return (
     <motion.ul
@@ -37,12 +65,21 @@ const FooterLinks = () => {
             visible: { opacity: 1, y: 0 },
           }}
         >
-          <Link
-            className="text-[14px] font-medium text-white transition duration-300 hover:text-gray-400 md:text-[16px]"
-            href={link.path}
-          >
-            {link.title}
-          </Link>
+          {link.path.includes("#services") ? (
+            <button
+              onClick={() => handleLinkClick(link.path)}
+              className="cursor-pointer text-[14px] font-medium text-white transition duration-300 hover:text-gray-400 md:text-[16px]"
+            >
+              {link.title}
+            </button>
+          ) : (
+            <button
+              className="text-[14px] font-medium text-white transition duration-300 hover:text-gray-400 md:text-[16px]"
+              onClick={() => handleLinkClick(link.path)}
+            >
+              {link.title}
+            </button>
+          )}
         </motion.li>
       ))}
     </motion.ul>

@@ -132,3 +132,19 @@
 .animate-once {
   animation: bounce 1s ease-out forwards;
 }
+
+/* Toastify */
+.Toastify__progress-bar {
+  background-color: #000;
+}
+.Toastify__toast-icon--success {
+  color: #000;
+}
+
+.Toastify svg {
+  fill: #000;
+}
+
+.Toastify__progress-bar--success {
+  background-color: #000;
+}
