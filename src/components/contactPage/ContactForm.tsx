@@ -18,6 +18,7 @@ const ContactForm: React.FC = () => {
   const handleFormSubmit = (values: FormValues) => {
     console.log("Form Submitted:", values);
     notify({ type: "success", msg: "Message sent successfully" });
+    formik.resetForm();
   };
 
   const phoneRegExp: RegExp =
