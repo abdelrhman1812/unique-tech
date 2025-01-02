@@ -89,7 +89,7 @@ const Slider = ({ slides }: SliderProps) => {
   );
 };
 
-const Page = () => {
+const PorjectDetails = () => {
   const { id } = useParams();
   const project = mock_projects.find(
     (project: Projects) => project.id === Number(id),
@@ -152,4 +152,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default PorjectDetails;
